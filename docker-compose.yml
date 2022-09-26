@@ -51,6 +51,7 @@ services:
 
   auth:
     image: nailz2k/auth
+    container_name: auth
     ports:
       - "3005:3005"
     networks:
@@ -67,6 +68,7 @@ services:
 
   storage:
     image: nailz2k/minio-storage
+    container_name: minio-storage
     ports:
       - "3002:3002"
     networks:
@@ -87,6 +89,7 @@ services:
 
   messanger:
     image: nailz2k/ws-messenger
+    container_name: ws-messanger
     ports:
       - "3001:3001"
       - "3333:3333"
@@ -105,7 +108,8 @@ services:
       - minio
 
   posts:
-    image: nailz2k/ws-messenger
+    image: nailz2k/posts
+    container_name: posts
     ports:
       - "3004:3004"
     networks:
